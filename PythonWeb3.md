@@ -4,8 +4,18 @@
 現在、静的に埋め込まれているコンテンツをCSVから読み取って動的に生成する
 
 ###　データの準備
-支給された追加画像を`statics/images`ディレクトリに格納する。
+CSVファイルと画像をダウンロードします。  
+[PythonWEB授業資料](https://github.com/ozaki-sozosha/PythonWEB/)
+
+- `kujira_cafe/data/`から`menu.csv`
+- `kujira_cafe/statics/images/`から`item10.jpg`から`item21.jpg`まで
+
+をダウンロードします。
+
+追加画像を`statics/images`ディレクトリに格納する。
 `menu.csv`を`kujira_cafe`直下に`data`ディレクトリを作成し格納する。
+
+dataディレクトリ、imagesディレクトリをダウンロードして差し替えてもOKです。
 
 ### Model作成
 `kujira_cafe`直下に`models`フォルダを作成しPythonファイル`menu.py`を作成する。
