@@ -3,7 +3,7 @@
 ## menuページを動的コンテンツ化
 現在、静的に埋め込まれているコンテンツをCSVから読み取って動的に生成する
 
-###　データの準備
+### データの準備
 CSVファイルと画像をダウンロードします。  
 [PythonWEB授業資料](https://github.com/ozaki-sozosha/PythonWEB/)
 
