@@ -147,5 +147,5 @@ def menu():
 
 ![画面](images/kujira_cafe_menus.png)
 
-
+[以降はPythonWeb4.mdに続く](PythonWeb4.md)
 

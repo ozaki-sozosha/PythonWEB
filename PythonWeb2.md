@@ -111,14 +111,14 @@ app = Flask(__name__,static_folder='statics')
 index.htmlのcssリンクを環境に合わせます。
 ```html
 <title>KUZIRA CAFE</title>
-<link rel="stylesheet" href="statics/css/style.css">
+<link rel="stylesheet" href="/statics/css/style.css">
 ```
 CSSが有効になったことをブラウザで確認します。
 
 続いてindex.htmlの画像のパスを変更します。
 ```html
 <div class="logo">
-    <a href="index.html"><img src="statics/images/logo.svg" alt="KUZIRA CAFE"></a>
+    <a href="index.html"><img src="/statics/images/logo.svg" alt="KUZIRA CAFE"></a>
 </div>
 ```
 画像が表示されていることを確認しましょう。  
@@ -186,7 +186,7 @@ Flaskテンプレートに親子関係をつくり、継承することが出来
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %} KUZIRA CAFE</title>
-    <link rel="stylesheet" href="statics/css/style.css">
+    <link rel="stylesheet" href="/statics/css/style.css">
 </head>
 <body id="top">
     <!-- ヘッダー -->
@@ -221,9 +221,9 @@ Flaskテンプレートに親子関係をつくり、継承することが出来
 
 {% block main %}
 <main>
-    <div class="logo-whale"><img src="statics/images/logo-whale.svg" alt=""></div>
+    <div class="logo-whale"><img src="/statics/images/logo-whale.svg" alt=""></div>
     <p>一杯のコーヒーで、ゆったり泳ぐクジラのような安らぎとくつろぎを。正面には太平洋、裏手は山、近くには田んぼがあってのんびりした雰囲気の小さなカフェですが、日常を離れて、思い思いのひとときをお過ごしください。</p>
-    <img src="statics/images/banner.jpg" alt="旬のいちごを使ったメニューが期間限定で登場！">
+    <img src="/statics/images/banner.jpg" alt="旬のいちごを使ったメニューが期間限定で登場！">
 
     <div id="news">
         <h2>お知らせ</h2>
