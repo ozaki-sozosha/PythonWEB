@@ -9,22 +9,30 @@ Webアプリケーションでは下記の動作を使い分けます。
 ### アンカータグによる画面遷移
 一般的なAタグによる遷移
 ```html
-<li><a href="/redirect">リダイレクト(実験)</a></li>
+<li><a href="/">ホーム</a></li>
 ```
 `url_for関数`による遷移
 ```html
-<li><a href="{{url_for('redirect')}}">リダイレクト(実験)</a></li>
+<li><a href="{{url_for('index')}}">ホーム</a></li>
 ```
 
 ### リダイレクトによる画面遷移
 Python
 Flaskにて"/redirect"にアクセスするとトップページにリダイレクト
 ```python
+from flask import Flask,...略...,redirect
+
 @app.route('/redirect')
 def redirect():
     return redirect('/')
     # url_forを利用した場合
     # return redirect(url_for('index'))
 ```
+
+HTMLにアンカータグを記述します。
+```html
+<li><a href="{{url_for('redirect')}}">リダイレクト(実験)</a></li>
+```
+
 
 Chromeのデベロッパーツールでリダイレクトの動作を確認してみましょう。
