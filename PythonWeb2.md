@@ -168,6 +168,8 @@ TOPページにはページ内アンカーポイントへのリンクが設定�
 <li><a href="{{url_for('index')}}#news">お知らせ</a></li>
 ```
 
+[画面遷移について](PythonWebOP.md)
+
 ***Review!!!***   
 acess/menu/contactのページも全て修正してKujiraCafeが正しく動くようにしてみましょう。
 
