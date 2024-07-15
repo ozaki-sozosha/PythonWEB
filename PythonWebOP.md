@@ -17,8 +17,8 @@ Webアプリケーションでは下記の動作を使い分けます。
 ```
 
 ### リダイレクトによる画面遷移
-Python
-Flaskにて"/redirect"にアクセスするとトップページにリダイレクト
+Flaskにて"/redirect"にアクセスするとトップページにリダイレクト  
+app.pyを編集
 ```python
 from flask import Flask,...略...,redirect
 
@@ -34,5 +34,22 @@ HTMLにアンカータグを記述します。
 <li><a href="{{url_for('redirect')}}">リダイレクト(実験)</a></li>
 ```
 
-
 Chromeのデベロッパーツールでリダイレクトの動作を確認してみましょう。
+
+## 404ページをカスタマイズ
+app.pyを編集
+```python
+from flask import Flask,...略...,abort
+
+# エラーページのルートを登録
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+```
+
+app.pyを編集
+```python
+# エラーページを呼び出す
+return abort(404) 
+```
