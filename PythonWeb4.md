@@ -19,7 +19,7 @@ app.py
 def menu(page_no):
 
     #動作テスト
-    return page_no
+    return "<p>{}</p>".format(page_no)
 
     # Menuクラスのインスタンス化
     menu = M.Menu()
@@ -28,8 +28,7 @@ def menu(page_no):
 templates/base.html
 ```html
     <li><a href="{{url_for('access')}}">アクセス</a></li>
-    <li><a href="{{url_for('menu')}}">メニュー</a></li>
-    <li><a href="{{url_for('contact',page_no=1)}}">お問い合わせ</a></li>
+    <li><a href="{{url_for('menu',page_no=1)}}">メニュー</a></li>
 ```
 
 動作を確認してみましょう。  
