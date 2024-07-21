@@ -4,3 +4,5 @@ kujira_cafe/templates/*
 kujira_cafe/models/*
 kujira_cafe/app.py
 kujira_cafe/__pycache__
+exam
+exam/*
