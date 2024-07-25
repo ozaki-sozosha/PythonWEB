@@ -41,7 +41,7 @@ Flaskを使ってみましょう。
 
 ## Flaskのインストール
 Flaskは外部モジュールのため、インストールが必要です。  
-仮想環境を作成し有効化します。  
+VSCodeのターミナルから仮想環境を作成し有効化します。  
 ```
 python -m venv .venv
 .venv\Scripts\activate
