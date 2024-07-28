@@ -62,7 +62,7 @@ pip list
 *`pip`コマンドが通らない場合は、`python -m pip install <ライブラリ名>`で試してみてください。
 
 ## Flaskを動かしてみる
-kujira_cafeディレクトリにpythonファイルを作成します。
+webディレクトリにpythonファイルを作成します。
 ファイル名を`main.py`に変更します。  以下`main.py`の内容です。
 ```
 # Flaskをインポート
