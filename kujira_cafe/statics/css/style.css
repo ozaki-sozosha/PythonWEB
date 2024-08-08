@@ -1,8 +1,10 @@
+@charset "UTF-8";
+
 /* すべてのページに適用される設定 */
 html {
     font-size: 16px;
     font-family: sans-serif;
-    }
+}
 * {
     box-sizing: border-box;
 }
@@ -12,25 +14,27 @@ body {
 p, li, td {
     line-height: 1.7;
 }
+
 a:link {
-    color: #F07D34;
-    text-decoration: none;
+    color: #f07d34;
+    text-decoration:  none;
 }
 a:visited {
-    color: #F07D34;
-    text-decoration: none;
+    color: #f07d34;
+    text-decoration:  none;
 }
 a:hover {
-    color: #F07D34;
+    color: #f07d34;
     text-decoration: underline;
 }
 a:active {
-    color: #F07D34;
+    color: #f07d34;
     text-decoration: underline;
 }
 img {
     max-width: 100%;
 }
+
 
 /* すべてのページに適用 - ヘッダー */
 .header {
@@ -45,12 +49,11 @@ img {
     margin: 30px 0 0 0;
     padding: 0;
     list-style-type: none;
-
     display: flex;
     justify-content: center;
     gap: 40px;
 }
-.nav a:link {
+.nav a:link{
     color: #253958;
 }
 .nav a:visited {
@@ -58,9 +61,53 @@ img {
 }
 .nav a:hover {
     text-decoration: none;
+    opacity: 0.5;
 }
 .nav a:active {
     text-decoration: none;
+}
+
+
+/*  ドロップダウンメニュー　*/
+.nav > ul{
+	flex-wrap: wrap;
+    justify-content: space-between;
+	width:80%;
+    margin:30px auto;
+}
+.nav > ul > li{
+	flex-grow:1;
+    position: relative;
+}
+.nav > ul > li a{
+	display:block;
+	padding:10px;
+    background:#fff;
+}
+.nav> ul > li a:hover{
+    background:#fff;
+}
+.nav > ul > li > ul{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+}
+.nav  > ul > li:hover > ul{
+	z-index:10;
+	width:100%;
+    margin:0 auto;
+}
+.nav > ul > li > ul > li{
+	overflow: hidden;
+	height: 0;
+	transition: .2s;
+}
+.nav  > ul > li:hover > ul li{
+	overflow: visible;
+	height: 26px;
+}
+.nav> ul > li > ul > li a{
+    background:#ededed;
 }
 
 /* すべてのページに適用 - ヒーロー */
@@ -69,7 +116,7 @@ img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    color: #FFFFFF;
+    color: #fff;
     text-align: center;
 }
 .hero.index {
@@ -85,7 +132,6 @@ img {
 .hero.contact {
     background-image: url(../images/contact-hero.jpg);
 }
-
 /* すべてのページに適用 - メイン */
 main {
     margin: 90px auto 90px auto;
@@ -104,12 +150,10 @@ main h2 {
     text-align: center;
 }
 .copyright {
-    margin-top: 20px;
-    margin-bottom: 0;
     padding-top: 75px;
     padding-bottom: 75px;
     background-color: #253958;
-    color: #FFFFFF;
+    color: #fff;
     text-align: center;
 }
 
@@ -118,11 +162,13 @@ main h2 {
 .logo-whale {
     text-align: center;
 }
+
 .shop-info {
     border-collapse: collapse;
 }
-.shop-info th, .shop-info td {
-    border: 1px solid #DBDBDB;
+.shop-info th,
+.shop-info td {
+    border: 1px solid #dbdbdb;
     padding: 20px;
 }
 .shop-info th {
@@ -130,56 +176,76 @@ main h2 {
     text-align: left;
     vertical-align: top;
 }
-
-/* menu.html */
+/* menu */
 .items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
+ /* .items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+ }
+ .item {
+    width: calc((100% - 40px) / 3);
+ } */
 
-/* contact.html */
-form {
-    margin: 0 auto;
-    max-width: 640px;
+ /* page */
+.page {
+    margin: 3em auto;
 }
-input[type="text"], textarea {
-    padding: 6px;
-    width: 100%;
-    font-size: 1rem;
-}
-textarea {
-    height: 140px;
-}
-.submit {
-    text-align: center;
-}
-input[type="submit"] {
-    border: none;
-    padding: 20px;
-    width: 200px;
-    background-color: #253958;
-    color: #FFFFFF;
-    font-size: 1rem;
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 8px;
+    list-style-type: none;
+    padding: 0;
 }
 
-/* モバイル対応 */
-@media(max-width: 767px) {
-    .nav ul {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    main {
-        padding: 0 4%;
-    }
-
-    /* index.html */
-    .hero.index {
-        padding: 28vh 0;
-    }
-
-    /* menu.html */
-    .items {
-        grid-template-columns: 1fr 1fr;
-    }
+.pagination a {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border: 1px solid #333;
+    border-radius: 1px;
+    color: #333;
 }
+
+.pagination .current a {
+    background-color: #333;
+    color: #fff;
+    pointer-events: none;
+}
+
+.pagination .prev a,
+.pagination .next a {
+    gap: 0 4px;
+    width: auto;
+    padding: .5em .8em;
+    line-height: 1;
+}
+
+.pagination .prev a::before,
+.pagination .next a::after {
+    display: inline-block;
+    transform: rotate(45deg);
+    width: .3em;
+    height: .3em;
+    content: '';
+}
+
+.pagination .prev a::before {
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #333;
+}
+
+.pagination .next a::after {
+    border-top: 1px solid #333;
+    border-right: 1px solid #333;
+}
+
